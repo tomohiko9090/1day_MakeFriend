@@ -1,8 +1,33 @@
+<style>
+    .body_{
+    width: 600px;
+    margin:20px auto;
+    padding:20px;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 6px 2px 30px 0px rgba(0,0,0,0.75);
+    }
+</style>
+
 {% extends 'base.html' %}
 
+{% block header %}
+<div class="alert alert-primary" role="alert">
+    Home
+</div>
+{% endblock %}
+
+
 {% block content %}
-<h1>home</h1>
+<div class=body_>
 <a href="{% url 'manga' %}" class="btn btn-info" tabindex="-1" role="button" aria-disabled="true">マンガ</a>
+<a href="{% url 'anime' %}" class="btn btn-info" tabindex="-1" role="button" aria-disabled="true">アニメ</a>
+<a href="{% url 'love' %}" class="btn btn-info" tabindex="-1" role="button" aria-disabled="true">恋愛</a>
+<a href="{% url 'sports' %}" class="btn btn-info" tabindex="-1" role="button" aria-disabled="true">スポーツ</a>
 <!-- <a href="{% url 'home' %}" class="btn btn-info" tabindex="-1" role="button" aria-disabled="true">ホームに戻る</a>
 <a href="{% url 'home' %}" class="btn btn-info" tabindex="-1" role="button" aria-disabled="true">ホームに戻る</a> -->
+
+<p>ユーザー名: {{ username }}</p>
+<a href="{% url 'logout' %}" class="btn btn-danger" tabindex="-1" role="button" aria-disabled="true">ログアウト</a>
+</div>
 {% endblock %}

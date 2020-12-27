@@ -29,26 +29,26 @@
 
 {% block header %}
 <div class="alert alert-primary" role="alert">
-    マンガ
+    アニメ
 </div>
 {% endblock %}
 
 {% block content %}
 <!-- 作成画面に飛ぶ -->
 <div class="post_table">
+<a href="{% url 'anime_create' %}" class="btn btn-info" tabindex="-1" role="button" aria-disabled="true">新規作成</a>
 <h2>投稿一覧</h2>
-<a href="{% url 'manga_create' %}" class="new_make btn btn-info" tabindex="-1" role="button" aria-disabled="true">新規作成</a>
 </div>
 
 <div class="body_">
-<ul>
+    <ul>
+
 {% for item in object_list %}
-    <li><a href="{% url 'manga_detail' item.pk %}" class="btn btn-outline-info" role="button" aria-pressed="true">{{ item.title }}</a></li>
+    <li><a href="{% url 'anime_detail' item.pk %}" class="btn btn-outline-info" role="button" aria-pressed="true">{{ item.title }}</a></li>
 {% endfor %}
 </ul>
 </div>
-
 <div class="go_home">
-<a href="{% url 'home' %}" class="btn btn-success" tabindex="-1" role="button" aria-disabled="true">ホームに戻る</a>
+    <a href="{% url 'home' %}" class="btn btn-success" tabindex="-1" role="button" aria-disabled="true">ホームに戻る</a>
 </div>
 {% endblock content %}

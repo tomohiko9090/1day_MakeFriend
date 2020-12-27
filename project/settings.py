@@ -110,3 +110,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = BASE_DIR / 'static'
+
+# login_requiredでログインしていなければ遷移するURL
+LOGIN_URL = 'login'

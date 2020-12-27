@@ -1,10 +1,59 @@
 from django.db import models
 
 class Model_test(models.Model):
-    text = models.CharField(max_length=100)
+    author = models.CharField(max_length=100, null=True) # 投稿者
+    title = models.CharField(max_length=100)
+    content = models.TextField(
+        verbose_name='',
+        blank=True,
+        null=True,
+        max_length=1000,
+    )
 
+# マンガ
 class mangaModel(models.Model):
-    text = models.CharField(max_length=100)
+    author = models.CharField(max_length=100, null=True) # 投稿者
+    title = models.CharField(max_length=100)
+    content = models.TextField(
+        verbose_name='',
+        blank=True,
+        null=True,
+        max_length=1000,
+    )
+
+# アニメ
+class animeModel(models.Model):
+    author = models.CharField(max_length=100, null=True) # 投稿者
+    title = models.CharField(max_length=100)
+    content = models.TextField(
+        verbose_name='',
+        blank=True,
+        null=True,
+        max_length=1000,
+    )
+
+# 恋愛
+class loveModel(models.Model):
+    author = models.CharField(max_length=100, null=True) # 投稿者
+    title = models.CharField(max_length=100)
+    content = models.TextField(
+        verbose_name='',
+        blank=True,
+        null=True,
+        max_length=1000,
+    )
+
+# スポーツ
+class sportsModel(models.Model):
+    author = models.CharField(max_length=100, null=True) # 投稿者
+    title = models.CharField(max_length=100)
+    content = models.TextField(
+        verbose_name='',
+        blank=True,
+        null=True,
+        max_length=1000,
+    )
+
 # class TodoModel(models.Model):
 #     # CharField: 文字列を入れるフィールド
 #     title = models.CharField(max_length=100)
